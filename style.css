@@ -1,0 +1,134 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff; /* Light background */
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            position: absolute;
+            top: 10%;
+            font-family: 'Comic Sans MS', sans-serif;
+            color: #3f99e4;
+            font-size: 2.5rem;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        /* Cake container */
+        .cake-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        /* Top Layer (Pink) */
+        .cake-top {
+            width: 150px;
+            height: 40px;
+            background-color: #f095c1; /* Top pink layer */
+            border-radius: 50% 50% 0 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Middle Layer (Beige) */
+        .cake-middle {
+            width: 150px;
+            height: 40px;
+            background-color: #f8c8d8; /* Middle beige layer */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Bottom Layer (Brown) */
+        .cake-bottom {
+            width: 150px;
+            height: 40px;
+            background-color: #d89f77; /* Bottom brown layer */
+            border-radius: 0 0 50% 50%;
+        }
+
+        /* Plate */
+        .plate {
+            width: 170px;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            position: relative;
+            top: -10px;
+            z-index: 0;
+        }
+
+        /* Candle */
+        .candle {
+            position: absolute;
+            top: -50px; /* Positioned to make the candle sit on the cake */
+            width: 10px;
+            height: 60px;
+            background-color: white;
+            border-radius: 5px;
+            z-index: 3;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Flame */
+        .flame {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            width: 12px;
+            height: 20px;
+            background-color: orange;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: flicker 0.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        /* Confetti */
+        .confetti-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: pink;
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
